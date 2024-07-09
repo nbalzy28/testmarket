@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brynn's Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            Brynn's Marketplace
+        </div>
+    </header>
+    <main id="item-list">
+        <!-- Items will be dynamically added here -->
+    </main>
+
+    <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xldreydv" method="post" class="contact-form">
+        <button type="button" class="close" onclick="toggleForm()">×</button>
+        <fieldset id="fs-frm-inputs">
+            <label for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name" placeholder="Your First Name" required="">
+            <label for="last-name">Last Name</label>
+            <input type="text" name="last-name" id="last-name" placeholder="Your Last Name" required="">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="email@domain.tld" required="">
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" placeholder="Your Phone Number">
+            <label for="message">Message</label>
+            <textarea rows="5" name="message" id="message" placeholder="Enter your message here" required=""></textarea>
+            <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
+
+    <footer>
+        <!-- Shopping Cart Container -->
+        <div id="shopping-cart-container">
+            <div id="shopping-cart">
+                Shopping Cart: <span id="item-count">0 items</span> - Total: $<span id="total-amount">0.00</span>
+            </div>
+            <button onclick="clearCart()" id="clear-cart-button">Clear Cart</button>
+        </div>
+    </footer>
+
+    <script src="java.js"></script>
+</body>

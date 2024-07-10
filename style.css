@@ -277,3 +277,13 @@ header {
 }
 
 }
+
+@media screen and (min-width: 568px) {
+  /* Styles for landscape orientation on smaller devices like iPhones */
+
+  .add-to-cart {
+    margin-left: 5px;
+}
+
+
+}

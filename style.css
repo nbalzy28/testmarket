@@ -276,6 +276,11 @@ header {
     margin-left: -0px;
 }
 
+.contact-form {
+        max-width: 80%; /* Adjust width of the form */
+        height: auto;
+}
+
 }
 
 @media screen and (min-width: 568px) {

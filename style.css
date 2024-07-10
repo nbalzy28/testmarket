@@ -271,3 +271,9 @@ header {
     position: absolute;
     top: 160px;
 }
+
+.add-to-cart {
+    margin-left: -10px;
+}
+
+}

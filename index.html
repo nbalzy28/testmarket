@@ -1,8 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brynn's Marketplace</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header>
@@ -38,7 +40,22 @@
             <div id="shopping-cart">
                 Shopping Cart: <span id="item-count">0 items</span> - Total: $<span id="total-amount">0.00</span>
             </div>
-            <button onclick="clearCart()" id="clear-cart-button">Clear Cart</button>
+            <div class="cart-buttons-container">
+                <div class="cart-buttons-text"> <!-- Text for buttons at the top -->
+                    <button onclick="viewCart()" id="view-cart-button">View Cart</button> <!-- New View Cart button -->
+                    <button onclick="clearCart()" id="clear-cart-button">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Modal -->
+        <div id="cart-container">
+            <div id="cart-items"></div>
+            <div id="cart-total"></div>
+            <div id="cart-buttons">
+                <button onclick="toggleCart()">Close</button>
+                <button>Checkout</button> <!-- Placeholder for Checkout button -->
+            </div>
         </div>
     </footer>
 

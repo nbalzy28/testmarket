@@ -1,11 +1,9 @@
-/* style.css */
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-    position: relative; /* Ensure body can position children relative to itself */
+    position: relative;
 }
 
 header {
@@ -14,6 +12,7 @@ header {
     text-align: center;
     border-radius: 0 0 50% 50%;
     font-family: 'Lucida Handwriting', cursive;
+    z-index: 1000; /* Ensure header stays above other content */
 }
 
 .header-title {
@@ -30,7 +29,7 @@ header {
     justify-content: space-around;
     padding: 20px;
     position: relative;
-    top: 55px;
+    top: 145px; /* Adjusted to keep items below header */
 }
 
 .item {
@@ -75,7 +74,7 @@ header {
 }
 
 .contact-form {
-    display: none; /* Hide the form by default */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -89,7 +88,6 @@ header {
     width: 400px;
 }
 
-/* Fieldset and input style */
 #fs-frm-inputs {
     display: grid;
     grid-gap: 10px;
@@ -113,7 +111,6 @@ header {
     resize: vertical;
 }
 
-/* Submit button style */
 #fs-frm input[type="submit"] {
     background-color: #318CE7;
     color: white;
@@ -137,35 +134,47 @@ header {
     background: none;
     border: none;
     padding: 0;
-    color: #666; /* Close button color */
+    color: #666;
 }
 
 .close:hover {
-    color: #FF69B4; /* Change color on hover if desired */
+    color: #FF69B4;
 }
 
 .contact-form.show-form {
     display: block;
 }
 
-/* Shopping Cart Styles */
+/* Adjusted Shopping Cart and View Cart Container Styling */
+
 #shopping-cart-container {
-    position: absolute;
-    top: 105px; /* Adjust as needed for spacing */
-    right: 33px; /* Adjust as needed for spacing */
+    position: fixed;
+    top: 120px;
+    right: 20px; /* Adjusted to be responsive */
     background-color: white;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
+    z-index: 100; /* Ensure it appears above other content */
+    width: 300px; /* Adjusted width for responsiveness */
 }
 
 #shopping-cart {
     font-size: 0.9rem;
-    margin-right: 10px;
+    margin-bottom: 10px; /* Space at the bottom for buttons */
 }
 
+.cart-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-buttons-text {
+    text-align: right;
+}
+
+#view-cart-button,
 #clear-cart-button {
     background-color: #318CE7;
     color: white;
@@ -175,14 +184,83 @@ header {
     border-radius: 4px;
 }
 
+#view-cart-button:hover,
 #clear-cart-button:hover {
     background-color: #FF1493;
 }
 
-@media only screen and (max-width: 768px) {
+/* Cart Modal */
 
-#shopping-cart-container {
-    position: absolute;
-    top: 160px;
-    right: 20px;
+#cart-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 90%;
+    width: 400px;
+}
+
+/* Adjust for when the cart overlay is shown */
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it's above other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    width: 400px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.cart-items {
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    margin-bottom: 5px;
+}
+
+.cart-total {
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.close-button {
+    background-color: #318CE7;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    float: right;
+    margin-top: 10px;
+}
+
+.close-button:hover {
+    background-color: #FF1493;
+}
+
+.add-to-cart {
+    margin-left: 10px;
 }
